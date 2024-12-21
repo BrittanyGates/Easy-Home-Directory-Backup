@@ -26,11 +26,11 @@ in user's Home Directory onto a local backup device.
 * To run the program you can do either of the following:
     * Clone the repo: https://github.com/brittbot-bgates/Easy-Home-Directory-Backup.git
     * Download the ZIP file from the
-      repo: 
+      repo: https://github.com/brittbot-bgates/Easy-Home-Directory-Backup/archive/refs/heads/main.zip
 
 ### Executing program
 
-1. Open your Terminal or Windows Terminal
+1. Open your Terminal
 2. Change directory (`cd`) to the `src` directory of the program's directory path using one of the examples below:
     - Linux: `cd /home/$username/Downloads/Easy-Home-Directory-Backup/src`
 3. Type the following command to run the program: `python main.py` or `python3 main.py`
