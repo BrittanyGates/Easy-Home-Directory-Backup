@@ -46,10 +46,9 @@ def full_backup() -> None:
                 for _ in tqdm(range(100), desc="Backup Progress", unit="GB"):
                     """rsync options
                     a = Archive
-                    n = Dry run (will be removed later)
                     z = Compression
                     """
-                    subprocess.run(["rsync", "-anz",
+                    subprocess.run(["rsync", "-az",
                                     f"--log-file={path}/easy_home_directory_backup_{formatted_today_date}_log_file",
                                     home_dir_path, backup_device_path])
                 print()
