@@ -1,6 +1,6 @@
 # Easy Home Directory Backup
 
-![A piece of barren land infected by evil creatures like wolves, bats, ghouls, mummies, wizards, and skeletons.](easy_home_directory_backup_gemini_generated.jpeg)
+![A laptop sitting on a desk displaying the phrase "Easy Home Directory Backup" with a penguin sitting on the right side of the laptop.](easy_home_directory_backup_gemini_generated.jpeg)
 
 A CLI program to perform either a full or partial backup of the user's Home Directory.
 
