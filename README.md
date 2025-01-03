@@ -14,6 +14,8 @@ in user's Home Directory onto a local backup device.
 ### Dependencies
 
 * Python 3 (latest release is recommended).
+* Rich Python Package
+    * This package can be installed for various operating systems from PyPi [here](https://pypi.org/project/rich/).
 * rsync
     * Some distributions already install this utility, but others may not. It can be downloaded from the distribution's
       package manager.
@@ -21,14 +23,19 @@ in user's Home Directory onto a local backup device.
     * Download instructions for this program are present on the program's [repo](https://github.com/tqdm/tqdm). It is
       usually installed through `pip`, but other options are available.
 
-### Installing
+### Download Options
 
-* To run the program you can do either of the following:
+* Download the program via one of the two options below:
     * Clone the repo: https://github.com/brittbot-bgates/Easy-Home-Directory-Backup.git
     * Download the ZIP file from the
       repo: https://github.com/BrittanyGates/Easy-Home-Directory-Backup/archive/refs/heads/master.zip
 
-### Executing program
+### Executing The Program
+
+> I recommend executing this program in a Python Virtual Environment (virtualenv) to install the dependencies easier.
+>
+> Learn more about virtualenvs, including how to create them, from
+> the [official Python Documentation](https://docs.python.org/3/library/venv.html).
 
 1. Open the Terminal
 2. Change directory (`cd`) to the `src` directory of the program's directory path using the examples below:
@@ -37,7 +44,9 @@ in user's Home Directory onto a local backup device.
 
 ## Help
 
-* If you do you can reach out to me via one of the links in the [Author](#author) section.
+Please file a new issue using the [Issues](https://github.com/BrittanyGates/Easy-Home-Directory-Backup/issues) tab on
+the
+repo.
 
 ## Author
 
@@ -50,8 +59,12 @@ in user's Home Directory onto a local backup device.
 
 ## Version History
 
+* Latest release notes as of January 2025
+    * Refactored the project to use the Rich package to improve the text displayed on screen.
+    * Corrected the logic for all the `try/except` statements.
+    * Added and/or fixed docstrings in various modules.
 * Latest release notes as of late December 2024.
-  * Initial release
+    * Initial release
 
 ## License
 
