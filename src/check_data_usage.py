@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-from text_display_tools import *
+"""This module performs various disk storage checks and usage."""
+from console import console, error_message
 import shutil, sys
 
 
@@ -29,13 +30,15 @@ def check_free_space_for_backup(backup_path, home_dir) -> bool:
     """
     bd_total, bd_used, bd_free = check_free_space_on_backup_device(backup_path)
     hd_total, hd_used, hd_free = check_home_directory_size(home_dir)
-    print()
-    print(center_text(f"{backup_path} free disk space available: {bd_free} GB"))
-    print(center_text(f"Home Directory disk usage: {hd_used} GB"))
-    print()
+    console.print()
+    console.print(f"{backup_path} free disk space available: {bd_free} GB", justify="center")
+    console.print(f"Home Directory disk usage: {hd_used} GB", justify="center")
+    console.print()
     if hd_used >= bd_free:
-        print(center_text(f"{backup_path} doesn't have enough space to contain the backup."))
-        print(center_text("Either perform a partial backup, or free up space on the backup device."))
+        console.print(f"{backup_path} doesn't have enough space to contain the backup.", style=error_message,
+                      justify="center")
+        console.print("Either perform a partial backup, or free up space on the backup device.", style=error_message,
+                      justify="center")
         sys.exit()
     else:
         return True

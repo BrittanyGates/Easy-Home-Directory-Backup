@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
+"""This module validates the path to the backup device."""
+from console import console, notification
 from pathlib import Path
-from text_display_tools import *
+from text_display_tools import clear_screen, sleep_print
 import os, stat, subprocess, sys
 
 
@@ -47,53 +49,57 @@ def validate_backup_path(device_path: str) -> bool:
 
     # If the path is the user's Home Directory
     if str(path).startswith("~") or str(path) == os.path.expanduser("~"):
-        print()
-        print(center_text(f"Backup path {path} cannot be your Home Directory"))
-        print(center_text("That's all right: You can enter a new path in a few seconds."))
+        console.print()
+        console.print(f"Backup path {path} cannot be your Home Directory", style=notification, justify="center")
+        console.print("That's all right: You can enter a new path in a few seconds.", style=notification,
+                      justify="center")
         sleep_print()
         clear_screen()
         return False
     # If the path isn't valid
     elif not path.exists():
-        print()
-        print(center_text(f"Backup path {path} doesn't exist."))
-        print(center_text("That's all right: You can enter a new path in a few seconds."))
+        console.print()
+        console.print(f"Backup path {path} doesn't exist.", style=notification, justify="center")
+        console.print("That's all right: You can enter a new path in a few seconds.", style=notification,
+                      justify="center")
         sleep_print()
         clear_screen()
         return False
     # If the path isn't a directory
     elif not path.is_dir():
-        print()
-        print(center_text(f"Backup path {path} isn't a directory."))
-        print(center_text("That's all right: You can enter a new path in a few seconds."))
+        console.print()
+        console.print(f"Backup path {path} isn't a directory.", style=notification, justify="center")
+        console.print("That's all right: You can enter a new path in a few seconds.", style=notification,
+                      justify="center")
         sleep_print()
         clear_screen()
         return False
     # If the backup device doesn't have read/write permissions
     elif not check_backup_device_permissions(path):
-        print()
-        print(center_text(f"Backup path {path} doesn't have read/write permissions."))
-        print(center_text("Please add the read/write permissions to the backup device and run this program again."))
+        console.print()
+        console.print(f"Backup path {path} doesn't have read/write permissions.", style=notification, justify="center")
+        console.print("Please add the read/write permissions to the backup device and run this program again.",
+                      style=notification, justify="center")
         sleep_print()
-        print()
-        print(center_text("*" * 80))
-        print(center_text("!! Program exited !!"))
-        print(center_text("*" * 80))
-        print()
+        console.print()
+        console.print("!! Program exited !!", style=notification, justify="center")
+        console.print()
         sys.exit()
     # If the backup path is a mount point or a critical system directory (/dev/sd* or /var)
     elif not check_if_backup_path_is_a_mount_point(path):
-        print()
-        print(center_text(f"Path {path} is either a mount point or a critical system directory."))
-        print(center_text("Those cannot be used as a backup device."))
+        console.print()
+        console.print(f"Path {path} is either a mount point or a critical system directory.", style=notification,
+                      justify="center")
+        console.print("Those cannot be used as a backup device.", style=notification, justify="center")
         sleep_print()
         clear_screen()
         return False
     # If the backup device doesn't have a Linux/rsync compatible file system
     elif not check_backup_device_file_system(path):
-        print()
-        print(center_text(f"Backup path {path} isn't a Linux-compatible file system."))
-        print(center_text("That's all right: You can enter a new path in a few seconds."))
+        console.print()
+        console.print(f"Backup path {path} isn't a Linux-compatible file system.", style=notification, justify="center")
+        console.print("That's all right: You can enter a new path in a few seconds.", style=notification,
+                      justify="center")
         sleep_print()
         clear_screen()
         return False
