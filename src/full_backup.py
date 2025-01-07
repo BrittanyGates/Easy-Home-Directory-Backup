@@ -61,7 +61,7 @@ def full_backup() -> None:
                     a = Archive
                     z = Compression
                     """
-                    subprocess.run(["rsync", "-anz",
+                    subprocess.run(["rsync", "-az",
                                     f"--log-file={path}/easy_home_directory_backup_{formatted_today_date}_log_file",
                                     home_dir_path, backup_device_path])
                 console.print()

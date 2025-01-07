@@ -54,7 +54,7 @@ def partial_backup() -> None:
                     a = Archive
                     z = Compression
                     """
-                    subprocess.run(["rsync", "-anz", "--exclude=.*",
+                    subprocess.run(["rsync", "-az", "--exclude=.*",
                                     f"--log-file={path}/easy_home_directory_backup_{formatted_today_date}_log_file",
                                     home_dir_path, backup_device_path])
                 console.print()
@@ -74,7 +74,7 @@ def partial_backup() -> None:
                     a = Archive
                     z = Compression
                     """
-                    subprocess.run(["rsync", "-anz", "--exclude=* --include=.*",
+                    subprocess.run(["rsync", "-az", "--exclude=* --include=.*",
                                     f"--log-file={path}/easy_home_directory_backup_{formatted_today_date}_log_file",
                                     home_dir_path, backup_device_path])
                 console.print()
