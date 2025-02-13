@@ -9,7 +9,7 @@ A CLI program to perform either a full or partial backup of the user's Home Dire
 This Linux-only program runs in the user's Terminal to perform either a full or partial backup of the currently-logged
 in user's Home Directory onto a local backup device.
 
-## Dependencies
+## Program Dependencies
 
 > I recommend installing these in a Python Virtual Environment (virtualenv).
 >
@@ -41,25 +41,14 @@ The project requires the following programs to execute correctly:
 ## Running The Program
 
 1. Open the Terminal
-2. Change directory (`cd`) to the directory of the downloaded program's directory path. If you downloaded the files into
+2. Change directory (`cd`) to the `src` directory of the program's directory path. If you downloaded the files into
    your `Downloads` directory then you can use this command:
     - `cd /home/$username/Downloads/Easy-Home-Directory-Backup-master/src`
 3. Type the following command to run the program: `python main.py` or `python3 main.py`
 
-## Help
+## Found A Bug? Need Help?
 
-Please file a new issue using the [Issues](https://github.com/BrittanyGates/Easy-Home-Directory-Backup/issues) tab on
-the
-repo.
-
-## Creator
-
-* Brittany Gates
-    * [Website](https://brittbot.com)
-    * [Email](mailto:support@brittbot.com)
-    * [LinkedIn](https://www.linkedin.com/in/brittanycgates/)
-    * [Twitter / X](https://x.com/brittany__gates)
-    * [YouTube](https://www.youtube.com/c/BrittanyGates)
+Please file a new issue using the [Issues](https://github.com/BrittanyGates/Easy-Home-Directory-Backup/issues) tab on the repo.
 
 ## Version History
 
@@ -78,4 +67,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Acknowledgments
 
-* [Dominique Pizzie](https://gist.github.com/DomPizzie) for the simple README template
+* [Dominique Pizzie](https://gist.github.com/DomPizzie) for the simple README template.
