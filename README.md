@@ -40,26 +40,31 @@ The project requires the following programs to execute correctly:
 
 ## Running The Program
 
-1. Open the Terminal
+1. Open the Terminal.
 2. Change directory (`cd`) to the `src` directory of the program's directory path. If you downloaded the files into
    your `Downloads` directory then you can use this command:
     - `cd /home/$username/Downloads/Easy-Home-Directory-Backup-master/src`
-3. Type the following command to run the program: `python main.py` or `python3 main.py`
+3. Type the following command to run the program: `python main.py` or `python3 main.py`.
 
 ## Found A Bug? Need Help?
 
-Please file a new issue using the [Issues](https://github.com/BrittanyGates/Easy-Home-Directory-Backup/issues) tab on the repo.
+Please file a new issue using the [Issues](https://github.com/BrittanyGates/Easy-Home-Directory-Backup/issues) tab on
+the repo.
 
 ## Version History
 
 * Latest release notes as of February 2025:
-    * Updated the README.
+    * Refactored the program to improve the performance of the full and partial backups.
+        * Removed the only dot directories partial backup as it didn't make sense for users to choose it.
+        * Added the creation of a hidden directory to contain the program's log files.
+        * Change the content of some comments and docstrings.
+        * Updated the README.
 * Latest release notes as of January 2025:
     * Refactored the project to use the Rich package to improve the text displayed on screen.
     * Corrected the logic for all the `try/except` statements.
     * Added and/or fixed docstrings in various modules.
 * Latest release notes as of late December 2024:
-    * Initial release
+    * Initial release.
 
 ## License
 
