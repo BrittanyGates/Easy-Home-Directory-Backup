@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""This module performs various disk storage checks and usage."""
+"""This module performs various disk storage checks on the backup device."""
 from console import console, error_message
 import shutil, sys
 
 
 def check_free_space_on_backup_device(backup_path) -> tuple[int, int, int]:
-    """Checks for the amount of total, used, and free space on the backup device.
+    """Checks the amount of total, used, and free space on the backup device.
     :param backup_path: The user-supplied path to the backup device.
     :return: A named tuple of integers containing the total, used, and free disk usage in Gigabytes (GB).
     """
@@ -15,7 +15,7 @@ def check_free_space_on_backup_device(backup_path) -> tuple[int, int, int]:
 
 def check_home_directory_size(home_dir) -> tuple[int, int, int]:
     """Checks the total size of the user's Home Directory.
-    :param home_dir: The currently-logged in user's Home Directory.
+    :param home_dir: The user's Home Directory.
     :return: A named tuple of integers containing the total, used, and free disk usage in Gigabytes (GB).
     """
     total, used, free = shutil.disk_usage(home_dir)
@@ -25,7 +25,7 @@ def check_home_directory_size(home_dir) -> tuple[int, int, int]:
 def check_free_space_for_backup(backup_path, home_dir) -> bool:
     """Checks if there is enough space on the backup device to hold the backup.
     :param backup_path: The user-supplied path to the backup device.
-    :param home_dir: The currently-logged in user's Home Directory.
+    :param home_dir: The user's Home Directory.
     :return: True if there is enough space to hold the backup, but False it there isn't.
     """
     bd_total, bd_used, bd_free = check_free_space_on_backup_device(backup_path)

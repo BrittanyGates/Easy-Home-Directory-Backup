@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""This module modifies the way the text displays in the game."""
+"""This module modifies the way the text displays in the program."""
 from time import sleep
 import os
 
